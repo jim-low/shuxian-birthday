@@ -9,3 +9,39 @@ canvas {
     left: 0;
     z-index: -1;
 }
+
+@font-face {
+    font-family: allexa;
+    src: url('./assets/fonts/Allexa.ttf')
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.bday-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+
+    font-family: allexa;
+    font-size: 3rem;
+    font-style: italic;
+}
+
+.bday-msg h2 {
+    letter-spacing: .5rem;
+}
+
+.diamond-shuxian {
+    font-style: normal;
+}
