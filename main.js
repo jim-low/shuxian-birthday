@@ -33,12 +33,8 @@ function increaseColor() {
     }
 }
 
-sketch.setup = () => {
-    createCanvas(window.innerWidth, window.innerHeight)
-    background(30)
-    angleMode(DEGREES)
-    noiseDetail(1)
-
+function spawnPoints() {
+    points.length = 0
     const density = 30
     const space = width / density
 
@@ -48,6 +44,15 @@ sketch.setup = () => {
             points.push(p)
         }
     }
+}
+
+sketch.setup = () => {
+    createCanvas(window.innerWidth, window.innerHeight)
+    background(30)
+    angleMode(DEGREES)
+    noiseDetail(1)
+
+    spawnPoints()
 }
 
 sketch.draw = () => {
@@ -67,4 +72,10 @@ sketch.draw = () => {
     }
 
     increaseColor()
+}
+
+sketch.windowResized = () => {
+    createCanvas(window.innerWidth, window.innerHeight)
+    background(30)
+    spawnPoints()
 }
