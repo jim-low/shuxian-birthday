@@ -9,7 +9,7 @@ const color = {
     g: Math.floor(Math.random() * (255 - 50) + 50),
     b: Math.floor(Math.random() * (255 - 50) + 50),
 }
-
+const angles = [ 90, 180, 360, 540, 720, 900, 1080 ]
 
 function increaseColor() {
     const incrementor = 0.1
@@ -65,7 +65,7 @@ sketch.draw = () => {
         const b = map(point.x, 0, width,  color.b, color.b)
         fill(r, g, b)
 
-        const angle = map(noise(point.x * mult, point.y * mult), 0, 1, 0, 720)
+        const angle = map(noise(point.x * mult, point.y * mult), 0, 1, 0, point.angle || 720)
         point.add(createVector(cos(angle), sin(angle)))
 
         ellipse(point.x, point.y, 1)
@@ -78,4 +78,12 @@ sketch.windowResized = () => {
     createCanvas(window.innerWidth, window.innerHeight)
     background(30)
     spawnPoints()
+}
+
+sketch.mouseClicked = e => {
+    for (let i = 0; i < angles.length; ++i) {
+        const p = createVector(e.clientX, e.clientY)
+        p.angle = angles[i]
+        points.push(p)
+    }
 }
