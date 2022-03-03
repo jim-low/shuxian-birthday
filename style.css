@@ -37,7 +37,7 @@ canvas {
 
     font-family: allexa;
     font-style: italic;
-    font-size: calc(1rem + 2vw);
+    font-size: calc(10px + 2vw);
     user-select: none;
 }
 
