@@ -81,9 +81,16 @@ sketch.windowResized = () => {
 }
 
 sketch.mouseClicked = e => {
+    // change this to firework explosion
     for (let i = 0; i < angles.length; ++i) {
         const p = createVector(e.clientX, e.clientY)
         p.angle = angles[i]
         points.push(p)
     }
 }
+
+document.querySelectorAll('.bday-msg h2 span').forEach((letter, i) => {
+    setTimeout(() => {
+        letter.style.animation = 'fadeIn 1.5s ease-out forwards'
+    }, (i + 1) * 200);
+})

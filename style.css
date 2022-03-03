@@ -45,6 +45,10 @@ canvas {
     letter-spacing: .5rem;
 }
 
+.bday-msg h2 span {
+    opacity: 0;
+}
+
 .diamond-shuxian {
     font-style: normal;
     font-size: calc(1rem + 2vw);
