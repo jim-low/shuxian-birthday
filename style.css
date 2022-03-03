@@ -32,10 +32,11 @@ canvas {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    width: 100%;
 
     font-family: allexa;
-    font-size: 3rem;
     font-style: italic;
+    font-size: calc(1rem + 2vw);
 }
 
 .bday-msg h2 {
@@ -44,4 +45,5 @@ canvas {
 
 .diamond-shuxian {
     font-style: normal;
+    font-size: calc(1rem + 2vw);
 }
