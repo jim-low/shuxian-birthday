@@ -38,6 +38,7 @@ canvas {
     font-family: allexa;
     font-style: italic;
     font-size: calc(1rem + 2vw);
+    user-select: none;
 }
 
 .bday-msg h2 {
