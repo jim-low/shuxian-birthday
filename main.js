@@ -39,7 +39,7 @@ sketch.setup = () => {
     angleMode(DEGREES)
     noiseDetail(1)
 
-    const density = 20
+    const density = 30
     const space = width / density
 
     for (let x = 0; x < width; x += space) {
