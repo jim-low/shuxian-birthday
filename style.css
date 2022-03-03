@@ -41,10 +41,6 @@ canvas {
     user-select: none;
 }
 
-.bday-msg h2 {
-    letter-spacing: .5rem;
-}
-
 .bday-msg h2 span {
     opacity: 0;
 }
