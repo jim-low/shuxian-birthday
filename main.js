@@ -94,3 +94,7 @@ document.querySelectorAll('.bday-msg h2 span').forEach((letter, i) => {
         letter.style.animation = 'fadeIn 1.5s ease-out forwards'
     }, (i + 1) * 200);
 })
+
+setTimeout(() => {
+    document.querySelector('.diamond-shuxian').style.animation = 'fadeIn 1.5s ease-out forwards'
+}, 3500)

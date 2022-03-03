@@ -41,7 +41,7 @@ canvas {
     user-select: none;
 }
 
-.bday-msg h2 span {
+.bday-msg h2 span, .diamond-shuxian {
     opacity: 0;
 }
 
