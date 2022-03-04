@@ -11,28 +11,6 @@ const color = {
 }
 const angles = [ 90, 180, 360, 540, 720, 900, 1080 ]
 
-function increaseColor() {
-    const incrementor = 0.1
-
-    color.r += incrementor
-
-    color.g += incrementor
-
-    color.b += incrementor
-
-    if (color.r < 50) {
-        color.r = 50
-    }
-
-    if (color.g < 50) {
-        color.g = 50
-    }
-
-    if (color.b < 50) {
-        color.b = 50
-    }
-}
-
 function spawnPoints() {
     points.length = 0
     const density = width <= 650 ? 17 : 30
@@ -60,9 +38,9 @@ sketch.draw = () => {
     fill(255)
 
     for (const point of points) {
-        const r = map(point.x, 0, width,  color.r, color.r)
-        const g = map(point.y, 0, height,  color.g, color.g)
-        const b = map(point.x, 0, width,  color.b, color.b)
+        const r = map(point.x, 0, width, 50, color.r)
+        const g = map(point.y, 0, height, 50, color.g)
+        const b = map(point.x, 0, width, 50, color.b)
         fill(r, g, b)
 
         const angle = map(noise(point.x * mult, point.y * mult), 0, 1, 0, point.angle || 720)
@@ -70,8 +48,6 @@ sketch.draw = () => {
 
         ellipse(point.x, point.y, 1)
     }
-
-    increaseColor()
 }
 
 sketch.windowResized = () => {
