@@ -36,16 +36,16 @@ sketch.setup = () => {
 sketch.draw = () => {
     noStroke()
 
-    for (const point of points) {
-        const r = map(point.x, 0, width, minColor, color.r)
-        const g = map(point.y, 0, height, minColor, color.g)
-        const b = map(point.x, 0, width, minColor, color.b)
+    for (const vecPoint of points) {
+        const r = map(vecPoint.x, 0, width, minColor, color.r)
+        const g = map(vecPoint.y, 0, height, minColor, color.g)
+        const b = map(vecPoint.x, 0, width, minColor, color.b)
         fill(r, g, b)
 
-        const angle = map(noise(point.x * mult, point.y * mult), 0, 1, 0, point.angle || 720)
-        point.add(createVector(cos(angle), sin(angle)))
+        const angle = map(noise(vecPoint.x * mult, vecPoint.y * mult), 0, 1, 0, vecPoint.angle || 720)
+        vecPoint.add(createVector(cos(angle), sin(angle)))
 
-        ellipse(point.x, point.y, 1)
+        ellipse(vecPoint.x, vecPoint.y, 1)
     }
 }
 
