@@ -35,7 +35,6 @@ sketch.setup = () => {
 
 sketch.draw = () => {
     noStroke()
-    fill(255)
 
     for (const point of points) {
         const r = map(point.x, 0, width, minColor, color.r)
