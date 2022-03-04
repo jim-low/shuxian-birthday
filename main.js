@@ -4,10 +4,11 @@ import { sketch } from 'p5js-wrapper'
 
 const points = []
 const mult = (Math.random() * (0.01 - 0.005) + 0.005)
+const minColor = 60
 const color = {
-    r: Math.floor(Math.random() * (255 - 50) + 50),
-    g: Math.floor(Math.random() * (255 - 50) + 50),
-    b: Math.floor(Math.random() * (255 - 50) + 50),
+    r: Math.floor(Math.random() * (255 - minColor) + minColor),
+    g: Math.floor(Math.random() * (255 - minColor) + minColor),
+    b: Math.floor(Math.random() * (255 - minColor) + minColor),
 }
 const angles = [ 90, 180, 360, 540, 720, 900, 1080 ]
 
@@ -38,9 +39,9 @@ sketch.draw = () => {
     fill(255)
 
     for (const point of points) {
-        const r = map(point.x, 0, width, 50, color.r)
-        const g = map(point.y, 0, height, 50, color.g)
-        const b = map(point.x, 0, width, 50, color.b)
+        const r = map(point.x, 0, width, minColor, color.r)
+        const g = map(point.y, 0, height, minColor, color.g)
+        const b = map(point.x, 0, width, minColor, color.b)
         fill(r, g, b)
 
         const angle = map(noise(point.x * mult, point.y * mult), 0, 1, 0, point.angle || 720)
