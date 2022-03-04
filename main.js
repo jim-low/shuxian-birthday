@@ -35,7 +35,7 @@ function increaseColor() {
 
 function spawnPoints() {
     points.length = 0
-    const density = width <= 650 ? 10 : 30
+    const density = width <= 650 ? 17 : 30
     const space = width / density
 
     for (let x = 0; x < width; x += space) {
